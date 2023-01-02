@@ -1,4 +1,6 @@
-# fresh project
+# Fresh Todo App
+
+![Gotta Be Fresh gif](https://media.giphy.com/media/xUySTYO1CjMCU8GyZ2/giphy.gif)
 
 ### Usage
 
