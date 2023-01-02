@@ -1,9 +1,15 @@
 {
   "tasks": {
+    "check": "deno lint && deno fmt && deno check main.ts",
     "start": "deno run -A --watch=static/,routes/ dev.ts"
   },
   "importMap": "./import_map.json",
   "compilerOptions": {
+    "allowJs": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictFunctionTypes": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   }
