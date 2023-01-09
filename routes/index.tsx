@@ -1,5 +1,12 @@
 import { Head } from "$fresh/runtime.ts";
+// import { Handler } from "$fresh/server.ts";
 import TodoApp from "../islands/Todo.tsx";
+// import { createClient } from "supabase";
+
+// export const handler: Handler = (req, ctx) => {
+//   createClient();
+//   return ctx.render();
+// };
 
 export default function Home() {
   return (
@@ -7,7 +14,9 @@ export default function Home() {
       <Head>
         <title>Gotta Be Fresh Todo App</title>
       </Head>
-      <TodoApp />
+      <main class="bg-white h-screen font-sans">
+        <TodoApp />
+      </main>
     </>
   );
 }
