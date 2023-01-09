@@ -9,11 +9,15 @@ export default function TodoApp() {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("/api/todos");
-      const data = await res.json();
-      console.log(data);
-      setTodoList(data);
+      try {
+        const res = await fetch("/api/todos");
+        const data = await res.json();
+        if (data) setTodoList(data);
+      } catch (error) {
+        // pass
+      }
     };
+
     getData().catch(console.error);
   }, []);
 
