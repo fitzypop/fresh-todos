@@ -7,7 +7,7 @@ export default function App({ Component }: AppProps) {
   return (
     <>
       <Head>
-        <title>Fresh Todo App</title>
+        <title>Gotta Be Fresh Todo App</title>
       </Head>
       <Component />
     </>

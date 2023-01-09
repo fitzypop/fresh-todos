@@ -1,37 +1,21 @@
-import { ITodos } from "../routes/index.tsx";
+import { IS_BROWSER } from "https://deno.land/x/fresh@1.1.2/runtime.ts";
 import { useEffect, useRef, useState } from "preact/hooks";
+import { ITodos } from "../types.d.ts";
 
 export default function TodoApp() {
-  const [todoList, setTodoList] = useState<ITodos>([{
-    text: "write app",
-    completed: true,
-  }, {
-    text: "???",
-  }, {
-    text: "profit!",
-  }]);
+  const [todoList, setTodoList] = useState<ITodos>([]);
   const inputRef = useRef<HTMLInputElement>(null);
-  const refresh = () => {
-    // get().then((todoList) => {
-    //   setTodoList(todoList);
-    //   console.log(todoList, "todoList");
-    // });
-  };
-  useEffect(refresh, []);
 
-  //   const _add = () => {
-  //     const inputEl = inputRef.current;
-  //     if (inputEl) {
-  //       const body = {
-  //         text: inputEl.value,
-  //       };
-  //       add(body)
-  //         .then(refresh)
-  //         .finally(() => {
-  //           inputEl.value = "";
-  //         });
-  //     }
-  //   };
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("/api/todos");
+      const data = await res.json();
+      console.log(data);
+      setTodoList(data);
+    };
+    getData().catch(console.error);
+  }, []);
+
   const _add = () => {
     console.log("add button clicked");
     return;
@@ -41,7 +25,7 @@ export default function TodoApp() {
       <div class="h-auto w-full flex items-center justify-center">
         <div class="rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
           <div class="mb-4">
-            <h1>Todo List</h1>
+            <h1>{IS_BROWSER ? document.title : "Todo App"}</h1>
             <div class="flex items-center mt-4">
               <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 mr-4"
@@ -55,9 +39,10 @@ export default function TodoApp() {
               {/* <AddButton onClick={_add}>Add Task</AddButton> */}
             </div>
           </div>
-          <div>
-            {todoList.map((todo) => (
+          <div id="todo-list">
+            {todoList.map((todo, i) => (
               <div
+                id={`todo-item-${todo.id || i}`}
                 class={`flex py-2 px-3 items-center border-b-4 border-gray-400${
                   todo.completed ? " bg-green-100 " : " bg-red-100 "
                 }`}
