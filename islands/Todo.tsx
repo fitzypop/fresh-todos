@@ -1,5 +1,6 @@
-import { IS_BROWSER } from "https://deno.land/x/fresh@1.1.2/runtime.ts";
+import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useEffect, useRef, useState } from "preact/hooks";
+import Button from "../components/Button.tsx";
 import { ITodos } from "../types.d.ts";
 
 export default function TodoApp() {
@@ -20,6 +21,7 @@ export default function TodoApp() {
     console.log("add button clicked");
     return;
   };
+
   return (
     <main class="bg-gunmetal h-screen text(white) font-sans">
       <div class="h-auto w-full flex items-center justify-center">
@@ -36,7 +38,7 @@ export default function TodoApp() {
                 }}
               >
               </input>
-              {/* <AddButton onClick={_add}>Add Task</AddButton> */}
+              <Button onClick={_add}>Add Task</Button>
             </div>
           </div>
           <div id="todo-list">
