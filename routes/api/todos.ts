@@ -13,5 +13,6 @@ export const handler: Handler = (_req, _ctx) => {
       id: 2,
       text: "profit!",
     }]),
+    { headers: { "content-type": "application/json" } },
   );
 };
