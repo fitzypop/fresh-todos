@@ -12,5 +12,8 @@
     "strictFunctionTypes": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
+  },
+  "fmt": {
+    "files": { "exclude": ["README.md"] }
   }
 }
