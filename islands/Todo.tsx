@@ -18,7 +18,7 @@ export default function TodoApp() {
       }
     };
 
-    getData().catch(console.error);
+    if (IS_BROWSER) getData().catch(console.error);
   }, []);
 
   const _add = () => {
@@ -41,7 +41,12 @@ export default function TodoApp() {
               }}
             >
             </input>
-            <Button onClick={_add}>Add Task</Button>
+            <Button
+              class="text-green-600 border-green-600 hover:text-white hover:bg-green-600"
+              onClick={_add}
+            >
+              Add Task
+            </Button>
           </div>
         </div>
         <div id="todo-list">
