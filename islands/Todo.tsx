@@ -49,7 +49,7 @@ export default function TodoApp() {
             <div
               id={`todo-item-${todo.id || i}`}
               class={`flex py-2 px-3 items-center border-b-4 border-gray-400${
-                todo.completed ? " bg-green-100 " : " bg-red-100 "
+                todo.is_completed ? " bg-green-100 " : " bg-red-100 "
               }`}
             >
               <p class="w-full text-black ">{todo.text}</p>

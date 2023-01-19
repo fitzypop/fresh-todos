@@ -1,14 +1,14 @@
 import { Head } from "$fresh/runtime.ts";
-import { Handler } from "$fresh/server.ts";
+// import { Handler } from "$fresh/server.ts";
 import TodoApp from "../islands/Todo.tsx";
-import { createClient } from "supabase";
+// import { createClient } from "supabase";
 
-export const handler: Handler = (_req, ctx) => {
-  const { SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY } = Deno.env.toObject();
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY);
-  console.log(supabase);
-  return ctx.render();
-};
+// export const handler: Handler = async (_req, ctx) => {
+//   const { SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY } = Deno.env.toObject();
+//   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY);
+//   const { data, error } = await supabase.from("todos").select();
+//   return ctx.render({ data, error });
+// };
 
 export default function Home() {
   return (
