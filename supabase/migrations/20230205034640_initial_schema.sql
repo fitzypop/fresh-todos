@@ -3,7 +3,7 @@ create table "public"."todoitem" (
     "title" text not null,
     "is_completed" boolean,
     "created_at" timestamp with time zone default now(),
-    "user_id" uuid not null,
+    "user_id" uuid not null
 );
 
 
