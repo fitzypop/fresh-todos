@@ -57,7 +57,7 @@ export default function TodoApp() {
                 todo.is_completed ? " bg-green-100 " : " bg-red-100 "
               }`}
             >
-              <p class="w-full text-black ">{todo.text}</p>
+              <p class="w-full text-black ">{todo.title}</p>
             </div>
           ))}
         </div>

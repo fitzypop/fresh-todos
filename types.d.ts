@@ -1,8 +1,10 @@
 export interface ITodo {
-  id?: string;
-  text?: string;
-  is_completed?: boolean;
   created_at?: unknown;
+  description?: string;
+  id?: string;
+  is_completed?: boolean;
+  title?: string;
+  user_id?: string;
 }
 
 export type ITodos = ITodo[];

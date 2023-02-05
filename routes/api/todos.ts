@@ -2,7 +2,7 @@ import { Handler } from "$fresh/server.ts";
 import { supabase } from "../../lib/supabase.ts";
 
 export const handler: Handler = async (_req, _ctx) => {
-  const { data, error } = await supabase.from("todos").select();
+  const { data, error } = await supabase.from("todoitem").select();
   // console.log(data, error);
 
   if (data) return new Response(JSON.stringify(data));
