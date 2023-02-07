@@ -3,4 +3,5 @@ default: lint
 lint:
     deno lint
 
-# supabase db diff -f <recipe arg???>
+migrate target:
+    supabase db diff --use-migra -f {{target}}
