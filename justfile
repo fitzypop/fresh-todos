@@ -1,4 +1,8 @@
-default: lint
+default: start
+
+start:
+    supabase start
+    deno task start
 
 lint:
     deno lint
