@@ -4,8 +4,6 @@ import TodoApp from "../islands/Todo.tsx";
 // import { createClient } from "supabase";
 
 // export const handler: Handler = async (_req, ctx) => {
-//   const { SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY } = Deno.env.toObject();
-//   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_PUBLIC_KEY);
 //   const { data, error } = await supabase.from("todos").select();
 //   return ctx.render({ data, error });
 // };

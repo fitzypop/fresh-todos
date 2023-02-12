@@ -14,7 +14,7 @@ export default function TodoApp() {
         const data = await res.json();
         if (data) setTodoList(data);
       } catch (error) {
-        // pass
+        console.error(error);
       }
     };
 

@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         transparent: "transparent",
-        // current: "currentColor",
+        current: "currentColor",
         // "black": "#000000",
         "gunmetal": "#223445",
         "slategray": "#708090",

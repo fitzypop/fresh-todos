@@ -4,8 +4,8 @@ start:
     supabase start
     deno task start
 
-lint:
-    deno lint
+check:
+    deno task check
 
 migrate target:
     supabase db diff --use-migra -f {{target}}
