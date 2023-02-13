@@ -32,5 +32,4 @@ We need at least a db and auth token from this.
 
 **NOTE**: `supabase start` will apply all migration and seed scripts after starting the db.
 
-
 `deno task start` will watch the project directory and restart the deno server as necessary.
